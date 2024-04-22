@@ -9,7 +9,7 @@ const ErrorBoundary = ({ children }) => {
   } catch (error) {
     console.error('Error caught by ErrorBoundary:', error);
     setHasError(true);
-    return <h2>Something went wrong.</h2>;
+    return <div className="bg-[url('./assets/404.jpg')]"> <h2>Something went wrong.</h2></div>;
   }
 };
 
