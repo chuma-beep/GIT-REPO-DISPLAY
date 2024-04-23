@@ -4,6 +4,7 @@ import RepositoryDetails from "./components/RepositoryDetails";
 import ErrorBoundary from "./components/ErrorBoundary";
 import NotFound from "./components/NotFound";
 
+
 const App = () => {
   return (
     <Router>

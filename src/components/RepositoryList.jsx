@@ -15,6 +15,10 @@ function RepositoryList() {
     const [currentPage, setCurrentPage] = useState(1);8
     const [nextPage, setNextPage] = useState("");
 
+  
+
+
+
     const fetchRepos = () => {
         fetch(`https://api.github.com/users/chuma-beep/repos?per_page=6&page=${currentPage}`)
             .then((response) => response.json())
@@ -46,9 +50,8 @@ function RepositoryList() {
 
     const repoElements = repos.map((repoInfo) => {
         return (
-
+           <>
             <Card key={repoInfo.id}>
-                
                   <div className="bg-white rounded-lg overflow-hidden shadow-2xl shadow-blue-500/20 mt-10">
                    <div className="flex-initial p-4 items-center">
                     <CardHeader className=""   >
@@ -66,6 +69,8 @@ function RepositoryList() {
                   </div>
                 </div>
             </Card>
+            </>
+
         );
     });
 
