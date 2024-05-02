@@ -11,6 +11,10 @@
  - TAILWIND
  - VITE
 
-
-
+### Features
+ - View repositories
+ - Pagination is enabled
+ - 404 error Page
+ - veiw repos details
+ -  Search
 
