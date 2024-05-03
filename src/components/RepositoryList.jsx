@@ -8,15 +8,12 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-  
+// import RepositoryDetails from "./RepositoryDetails";
 
 function RepositoryList() {
     const [repos, setRepos] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);8
+    const [currentPage, setCurrentPage] = useState(1);
     const [nextPage, setNextPage] = useState("");
-
-  
-
 
 
     const fetchRepos = () => {
@@ -34,7 +31,7 @@ function RepositoryList() {
 
     useEffect(() => {
         fetchRepos();
-    }, [currentPage]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const viewNextPage = (event) => {
         event.preventDefault();
@@ -63,7 +60,7 @@ function RepositoryList() {
                 
                    <CardFooter className=" p-36">
                       <Button variant="outline" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow justify-self-center" >
-                          <Link to={`/RepoDetails/${repoInfo.name}`}>veiw</Link>
+                          <Link to={`/RepoDetails/${repoInfo.id}`}>veiw</Link>
                       </Button>
                   </CardFooter>
                   </div>
