@@ -12,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<RepositoryList />} />
           <Route path="/repositories/" element={<RepositoryList />} />
+
           <Route
             path="/repositories/:repoName"
             element={
