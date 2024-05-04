@@ -61,7 +61,7 @@ function RepositoryList() {
                 
                    <CardFooter className=" p-36">
                       <Button variant="outline" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow justify-self-center" >
-                          <Link to={`/RepoDetails/${repoInfo.id}`}>veiw</Link>
+                          <Link to={`/repositories/${repoInfo.name}?page=${currentPage}`}>veiw</Link>
                       </Button>
                   </CardFooter>
                   </div>

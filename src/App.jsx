@@ -18,14 +18,21 @@ const App = () => {
           <Route path="/repositories/" element={<NotFound />} />
           <Route path="/repositories" element={<Footer />} />     
           <Route 
-            path="/repositories/:repoName"
+            path="/repositories/"
             element={
               <ErrorBoundary FallbackComponent={ErrorBoundaryUI}>
                 <RepositoryList />
-               <RepositoryDetails />
+            
               </ErrorBoundary>
             }
-          />
+          /> <Route 
+          path="/repositories/:repoName"
+          element={
+            <ErrorBoundary FallbackComponent={ErrorBoundaryUI}>
+             <RepositoryDetails />
+            </ErrorBoundary>
+          }
+        />
           <Route path="*" element={<NotFound />} />
         </Routes>
   
