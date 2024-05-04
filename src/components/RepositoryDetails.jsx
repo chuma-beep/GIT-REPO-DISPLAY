@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../App.css';
+import {
+  Card,
+  CardContent,
+  // CardDescription,
+  // CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 
 const RepositoryDetails = () => {
   const { repoName } = useParams();
@@ -26,11 +35,22 @@ const RepositoryDetails = () => {
   }
 
   return (
-    <div>
+    <div className="flex justify-center">
+      <Card className="max-w-sm rounded overflow-hidden shadow-lg justify-center">
+        <CardHeader>
       <h2>{repository.name}</h2>
+      </CardHeader>
+      <CardTitle>
       <p>{repository.description}</p>
+      </CardTitle>
+      <CardContent>
       <p>Language: {repository.language}</p>
       <p>Stars: {repository.stargazers_count}</p>
+      <p className="text-sm text-gray-600 Language">language: {repository.language === null ? "none" : repository.language}</p>
+      <p className="text-sm text-gray-600 Date">Start date & time: {repository.created_at}</p>
+      <p className="text-sm text-gray-600 Visibility">Visibility: {repository.visibility}</p>
+      </CardContent>
+      </Card>
     </div>
   );
 };
