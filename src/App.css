@@ -55,3 +55,18 @@
   background-repeat: no-repeat;
   align-items: center;
 }
+
+
+.ErrorBoundaryUI{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  /* align-items: center; */
+  height: 100vh;
+  background-image: url('./assets/9318694.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  align-items: center;
+}
