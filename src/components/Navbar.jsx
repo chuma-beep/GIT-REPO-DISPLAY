@@ -4,7 +4,7 @@
 export default function Navbar(){
     return(
         <>
-<nav className="bg-white border-gray-200 dark:bg-gray-900 justify-end">
+<nav className="bg-white border-gray-200 justify-end">
   <div className="">
     <a  className="flex items-center space-x-3 rtl:space-x-reverse">
     </a>
