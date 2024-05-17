@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import '../App.css';
 import { Button } from "@/components/ui/button"
+
 import {
     Card, 
     CardFooter,
@@ -48,7 +49,7 @@ function RepositoryList() {
 
     const repoElements = repos.map((repoInfo) => {
         return (
-           
+        
             <Card key={repoInfo.id}>
                   <div className="bg-white rounded-lg overflow-hidden shadow-2xl shadow-blue-500/20 mt-10">
                    <div className="flex-initial p-4 items-center">

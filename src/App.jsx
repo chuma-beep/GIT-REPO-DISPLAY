@@ -4,38 +4,40 @@ import RepositoryDetails from "./components/RepositoryDetails";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorBoundaryUI from "./components/ErrorBoundaryUI";
 import NotFound from "./components/NotFound";
+import Header from "./components/Header.jsx";
 import Footer from "./components/Footer";
-
+import Navbar from "./components/Navbar.jsx"
 
 const App = () => {
   return (
     <Router>
-    
-        <Routes>
-          <Route path="/" element={<RepositoryList />} />
-          <Route path="/repositories/" element={<RepositoryList />} />
-          <Route path="/repositories/" element={<RepositoryDetails />} />
-          <Route path="/repositories/" element={<NotFound />} />
-          <Route path="/repositories" element={<Footer />} />     
-          <Route 
-            path="/repositories/"
-            element={
-              <ErrorBoundary FallbackComponent={ErrorBoundaryUI}>
-                <RepositoryList />
-            
-              </ErrorBoundary>
-            }
-          /> <Route 
-          path="/repositories/:repoName"
+      <Routes>
+        <Route path="/" element={
+        
+        <ErrorBoundary
+        FallbackComponent={ErrorBoundaryUI}
+      >
+        <Navbar/>
+        <Header/>
+        <RepositoryList />
+        <Footer/>
+         </ErrorBoundary>
+        } />
+        <Route path="/repositories" element={
+        <RepositoryList />} />
+        <Route 
+          path="/repositories/:repoName" 
           element={
             <ErrorBoundary FallbackComponent={ErrorBoundaryUI}>
-             <RepositoryDetails />
+              <Navbar/>
+              <Header/>
+              <RepositoryDetails />
+              <Footer/>
             </ErrorBoundary>
-          }
+          } 
         />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-  
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Router>
   );
 };
