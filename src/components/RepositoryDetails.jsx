@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import HomeButton from "./HomeButton";
 
 
 const RepositoryDetails = () => {
@@ -59,8 +60,10 @@ const RepositoryDetails = () => {
       <p>Stars: {repository.stargazers_count}</p>
       <p className="text-sm text-gray-600 Language">language: {repository.language === null ? "none" : repository.language}</p>
       <p className="text-sm text-gray-600 Date">Start date & time: {repository.created_at}</p>
-      <p className="text-sm text-gray-600 Visibility">Visibility: {repository.visibility}</p>
+      <p className="text-sm text-gray-600 Visibility mb-5">Visibility: {repository.visibility}</p>
+      <HomeButton/>
       </CardContent>
+
       </Card>
     </div>
   );
