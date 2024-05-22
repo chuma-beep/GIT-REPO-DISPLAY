@@ -18,11 +18,14 @@ const App = () => {
         <ErrorBoundary
         FallbackComponent={ErrorBoundaryUI}
       >
-        <Navbar/>
+         <ErrorBoundary FallbackComponent={ErrorBoundary}>
+      <Navbar />
+      </ErrorBoundary>
+        {/* <Navbar/> */}
         <Header/>
         <RepositoryList />
         <Footer/>
-         </ErrorBoundary>
+      </ErrorBoundary>
         } />
         <Route path="/repositories" element={
         <RepositoryList />} />
@@ -30,13 +33,13 @@ const App = () => {
           path="/repositories/:repoName" 
           element={
             <ErrorBoundary FallbackComponent={ErrorBoundaryUI}>
-              <Navbar/>
-              <Header/>
               <RepositoryDetails />
               <Footer/>
             </ErrorBoundary>
           } 
         />
+
+        <Route path="/ErrorBoundary" element={<ErrorBoundaryUI />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
@@ -44,3 +47,4 @@ const App = () => {
 };
 
 export default App;
+

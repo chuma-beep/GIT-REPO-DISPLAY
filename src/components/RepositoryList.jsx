@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import '../App.css';
 import { Button } from "@/components/ui/button"
+//import { useErrorBoundary } from "react-error-boundary";
 
 import {
     Card, 
@@ -15,7 +16,6 @@ function RepositoryList() {
     const [repos, setRepos] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [nextPage, setNextPage] = useState("");
-
 
     const fetchRepos = () => {
         fetch(`https://api.github.com/users/chuma-beep/repos?per_page=6&page=${currentPage}`)

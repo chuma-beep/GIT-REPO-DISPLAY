@@ -42,10 +42,6 @@ const RepositoryDetails = () => {
     </button></div>;
   }
 
-
-
-
-
   return (
     <div className="flex justify-center">
       <Card className="max-w-sm rounded overflow-hidden shadow-lg justify-center">
